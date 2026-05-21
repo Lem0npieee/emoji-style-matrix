@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emoji Style Matrix</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="stage" aria-label="Emoji Style Matrix">
+      <video id="camera" autoplay muted playsinline></video>
+      <canvas id="matrix"></canvas>
+
+      <div class="status-pill" aria-live="polite">
+        <span class="status-dot"></span>
+        <span id="activeLabel">ACTIVE</span>
+      </div>
+
+      <div class="window-actions" aria-label="窗口操作">
+        <button class="icon-button" type="button" aria-label="关闭">×</button>
+        <button id="resetButton" class="icon-button" type="button" aria-label="重置">↻</button>
+      </div>
+
+      <aside class="style-panel" aria-label="Style Matrix">
+        <header class="panel-header">
+          <span>Style Matrix</span>
+          <span aria-hidden="true">›</span>
+        </header>
+
+        <div class="style-list">
+          <button class="style-option" type="button" data-style="moon">
+            <span class="style-icon">🌘</span>
+            <span>月相 Emoji</span>
+          </button>
+          <button class="style-option is-active" type="button" data-style="heart">
+            <span class="style-icon">💗</span>
+            <span>爱心 Emoji</span>
+          </button>
+          <button class="style-option" type="button" data-style="flower">
+            <span class="style-icon">🌸</span>
+            <span>花朵 Emoji</span>
+          </button>
+        </div>
+
+        <footer class="panel-footer">
+          <button id="undoButton" type="button">Undo Pin</button>
+          <button id="clearButton" type="button">Clear All</button>
+        </footer>
+      </aside>
+
+      <div class="gesture-hint">Pinch with both hands and pull apart</div>
+
+      <section id="startPanel" class="permission-panel">
+        <h1>Emoji Style Matrix</h1>
+        <p id="statusText">允许摄像头后，用两只手的拇指和食指拉出一个四边形。</p>
+        <button id="startCamera" type="button">开启摄像头</button>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
